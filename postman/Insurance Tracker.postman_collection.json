@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "51e814b8-d5d2-4591-8ce5-dcf746dbd3bb",
+		"name": "Insurance Tracker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14921400"
+	},
+	"item": [
+		{
+			"name": "Data Processed",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mateo/Downloads/dupixent.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/data_processed",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"data_processed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Process File",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mateo/Downloads/dupixent.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/process/:company_slug/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"process",
+						":company_slug",
+						""
+					],
+					"variable": [
+						{
+							"key": "company_slug",
+							"value": "dupixent",
+							"description": "Valid Company Slug"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
