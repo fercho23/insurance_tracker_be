@@ -2,30 +2,16 @@
 
 import logging
 
-from config import Config
-
-# from flask_cors import CORS
-from dotenv import load_dotenv
-from flask import Flask
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
-load_dotenv()
+from .create_app import create_app
 
-app = Flask(__name__)
-app.config.from_object(Config)
-
-# cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-
+app = create_app()
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 ma = Marshmallow(app)
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
 logger = logging.getLogger(__name__)
 
 from .models import *

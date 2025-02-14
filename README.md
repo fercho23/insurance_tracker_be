@@ -193,20 +193,12 @@ poetry run pytest --cov
 ---
 
 ## 6 - Others commands
-### 6.1 - Black: (style files)
+### 6.1 - ruff: (style files)
 ```bash
-python black .
+python ruff .
 ```
 ```bash
-poetry run black .
-```
-
-### 6.2 - Isort: (sort files)
-```bash
-python isort .
-```
-```bash
-poetry run isort .
+poetry run ruff .
 ```
 
 ---
