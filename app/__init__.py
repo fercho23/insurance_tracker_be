@@ -27,3 +27,4 @@ logger = logging.getLogger(__name__)
 
 from .routes import *
 from .models import *
+from .schemas import *

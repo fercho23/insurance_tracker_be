@@ -1,5 +1,6 @@
 from app import app, logger
 from app.models import DataProcessed
+from app.schemas import DataProcessedSchema
 from flask import request, jsonify
 from flask_cors import cross_origin
 
@@ -20,16 +21,8 @@ def api_data_processed():
         if data_processed is None:
             return jsonify({'error': 'No data found'}), 404
 
-        results = [
-            {
-                "created": data.created,
-                "processed_data": data.processed_data,
-                "company": {
-                    "id": data.company.id,
-                    "slug": data.company.slug,
-                }
-            } for data in data_processed.items
-        ]
+        schema = DataProcessedSchema(many=True)
+        results = schema.dump(data_processed)
 
         return jsonify({
             'results': results,
@@ -43,6 +36,30 @@ def api_data_processed():
 
     except ValueError as e:
         return jsonify({'error': 'Invalid page or per_page parameter'}), 400
+
+    except Exception as e:
+        logger.error(f"Error processing request: {str(e)}")
+        return jsonify({
+            'error': 'Internal server error',
+            'message': str(e)
+        }), 500
+
+@app.route('/api/data_processed/<int:id>', methods=['GET'])
+@cross_origin()
+def api_data_processed_by_id(id):
+    try:
+        data_processed = DataProcessed.query.get(id)
+
+        if data_processed is None:
+            return jsonify({'error': 'No data found'}), 404
+
+        schema = DataProcessedSchema()
+        result = schema.dump(data_processed)
+
+        return jsonify(result), 200
+
+    except ValueError as e:
+        return jsonify({'error': 'Invalid id parameter'}), 400
 
     except Exception as e:
         logger.error(f"Error processing request: {str(e)}")
