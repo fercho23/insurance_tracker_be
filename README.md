@@ -218,24 +218,25 @@ Below each of the variables within the `.env` file.
 | ANTHROPIC_API_KEY    | Number        | DB Port. Default: 5432                                                   |
 
 ### 7.2 - Postman:
-Import the Postman collection from the `postman/` directory or [link](https://example.link.com).
+Import the Postman collection from the `postman/` directory.
 
 
 #### 7.3 - Anthropic:
 The Anthropic Python library provides convenient access to the REST API using Claude.
+Anthropic (https://www.anthropic.com/)
+Anthropic docs (https://docs.anthropic.com/en/api/getting-started)
 
 
 ---
 
 ## 8 - Dependency Lists:
 * [Anthropic](https://github.com/anthropics/anthropic-sdk-python)
-* [flask]()
-* [anthropic]()
-* [python-dotenv]()
-* [flask-marshmallow]()
-* [flask-sqlalchemy]()
-* [marshmallow-sqlalchemy]()
-* [flask-migrate]()
+* [flask](https://flask.palletsprojects.com/en/stable/)
+* [python-dotenv](https://pypi.org/project/python-dotenv/)
+* [flask-marshmallow](https://flask-marshmallow.readthedocs.io/en/latest/)
+* [flask-sqlalchemy](https://flask-sqlalchemy.readthedocs.io/en/stable/)
+* [marshmallow-sqlalchemy](https://marshmallow-sqlalchemy.readthedocs.io/en/latest/)
+* [flask-migrate](https://flask-migrate.readthedocs.io/en/latest/)
 * [environs](https://pypi.org/project/environs/)
 * [Postman](https://www.postman.com/)
 * [Pytest](https://docs.pytest.org/)
