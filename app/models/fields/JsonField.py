@@ -1,8 +1,10 @@
 import json
-from sqlalchemy import TypeDecorator, types
+
+from sqlalchemy import TypeDecorator
+from sqlalchemy import types
+
 
 class JsonField(TypeDecorator):
-
     @property
     def python_type(self):
         return object

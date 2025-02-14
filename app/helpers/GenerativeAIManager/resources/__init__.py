@@ -1,2 +1,4 @@
-from .ResourceInterface import ResourceInterface
+__all__ = ["AnthropicResource", "ResourceInterface"]
+
 from .AnthropicResource import AnthropicResource
+from .ResourceInterface import ResourceInterface

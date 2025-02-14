@@ -1,6 +1,7 @@
 from app import ma
 from app.models import Company
 
+
 class CompanySchema(ma.SQLAlchemySchema):
     class Meta:
         model = Company
