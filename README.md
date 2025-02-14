@@ -19,6 +19,7 @@ How to make the Backend work?
     6. Import and use Postman collection.
 
     7. Run application.
+        - The default port is 5000, so the default URL is http://localhost:5000.
 
 ---
 ---
@@ -99,6 +100,7 @@ pre-commit install
 ---
 
 ### 3 - Run the application
+The default port is 5000, so the default URL is http://localhost:5000.
 ```bash
 python run.py
 ```

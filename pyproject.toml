@@ -33,6 +33,7 @@ markers = [
 [tool.coverage.run]
 branch = false
 omit = [
+    "*/postman/*",
     "*/migrations/*",
     "*/tests/*",
     "conftest.py",
