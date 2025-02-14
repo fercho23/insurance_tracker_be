@@ -40,6 +40,73 @@
 					"path": [
 						"api",
 						"data_processed"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": "Page Number.",
+							"disabled": true
+						},
+						{
+							"key": "per_page",
+							"value": "2",
+							"description": "Amount of Elements per page.",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Data Processed Detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mateo/Downloads/dupixent.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/api/data_processed",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"data_processed"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": "Page Number.",
+							"disabled": true
+						},
+						{
+							"key": "per_page",
+							"value": "2",
+							"description": "Amount of Elements per page.",
+							"disabled": true
+						}
 					]
 				}
 			},
